@@ -36,7 +36,7 @@ const CreatePost = () => {
 
       <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
-          <formField 
+          <FormField 
             LabelName="Your name"
             type="text"
             name="name"
@@ -44,7 +44,7 @@ const CreatePost = () => {
             value={form.name}
             handleChange={handleChange}
           />
-          <formField 
+          <FormField 
             LabelName="Prompt"
             type="text"
             name="prompt"
@@ -59,5 +59,6 @@ const CreatePost = () => {
     </section>
   )
 }
+
 
 export default CreatePost
