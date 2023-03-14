@@ -17,7 +17,7 @@ app.use('/api/v1/dalle', dalleRoutes);
 
 app.get('/', async (req, res) => {
     res.send('Hello from DALL-E!');
-})
+});
 
 const startServer = async() => {
     try {
@@ -26,6 +26,6 @@ const startServer = async() => {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 startServer();

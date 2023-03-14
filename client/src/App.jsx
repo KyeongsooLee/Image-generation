@@ -20,9 +20,8 @@ const App = () => {
           <Route path="/create-post" element={<CreatePost />} />
         </Routes>
       </main>
-
     </BrowserRouter>
   )
 }
-// 35:13
+
 export default App
