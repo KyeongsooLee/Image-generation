@@ -17,6 +17,15 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSurpriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt })
+  }
+
   const generateImage = async () => {
     if(form.prompt) {
       try {
@@ -31,7 +40,7 @@ const CreatePost = () => {
 
         const data = await response.json();
 
-        setForm({ ...form, photo: `data:image/jpeg;base64, ${data.photo}`})
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}`})
       } catch (error) {
         alert(error);
       } finally {
@@ -54,10 +63,11 @@ const CreatePost = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(form)
+          body: JSON.stringify({...form}),
         });
 
         await response.json();
+        alert('Success');
         navigate('/');
       } catch (err) {
         alert(err);
@@ -67,15 +77,6 @@ const CreatePost = () => {
     } else {
       alert('Please enter a prompt and generate an image');
     }
-  }
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
-  const handleSurpriseMe = () => {
-    const randomPrompt = getRandomPrompt(form.prompt);
-    setForm({ ...form, prompt: randomPrompt })
   }
 
   return (
