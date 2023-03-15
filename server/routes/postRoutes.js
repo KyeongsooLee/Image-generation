@@ -18,12 +18,7 @@ cloudinary.config({
 router.route('/').get(async(req, res) => {
     try {
         const posts = await Post.find({});
-        const updatedPosts = posts.map((post) => {
-            const updatedPost = { ...post.a };
-            updatedPost.photo = updatedPost.photo.replace("http", "https");
-            return updatedPost;
-          });
-        res.status(200).json({ success: true, data: updatedPosts });
+        res.status(200).json({ success: true, data: posts });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Fetching posts failed' })
     }
