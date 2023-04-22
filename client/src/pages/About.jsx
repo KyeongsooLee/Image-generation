@@ -21,7 +21,7 @@ const About = () => {
               For more information or to get in touch, visit my portfolio site.</p>
           </div>
           <div>
-            <a href="https://github.com/KyeongsooLee/Portfolio" className="mt-4 inline-block text-white bg-indigo-600 rounded-lg px-4 py-2 hover:bg-indigo-700">View Portfolio</a>
+            <a href="https://kyeongsoolee.github.io/Portfolio" className="mt-4 inline-block text-white bg-indigo-600 rounded-lg px-4 py-2 hover:bg-indigo-700">View Portfolio</a>
           </div>
     
         </section>
